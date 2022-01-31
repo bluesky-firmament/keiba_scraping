@@ -1,5 +1,5 @@
 import csv
-import urllib
+import urllib.request
 from bs4 import BeautifulSoup
 def main():
     for number in range(1,1000):
