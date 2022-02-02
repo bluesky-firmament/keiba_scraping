@@ -20,10 +20,11 @@ def main():
         horse_name = horse_name.replace(" ","").replace("　","").replace("<h1>","").replace("</h1>","")
         horse_line = np.empty((1024,10),dtype='U20')
         csvname = "horse_blood_data/" + horse_name + ".csv"
+        blood_value_csvname = "horse_blood_data/blood_value_" + horse_name + ".csv"
         oldhorse_url_list = [] 
         position_x = 0
         position_y = 0
-        blood_percentage = {}
+        blood_percentage = np.empty((1024,2),dtype='U20')
         initial_horse_line(url,horse_line,position_x,position_y,oldhorse_url_list,blood_percentage)
         iteration = 0
         for several_url in oldhorse_url_list:
@@ -31,7 +32,7 @@ def main():
             iteration = iteration + 1
         pd.DataFrame(horse_line).to_csv(csvname,header=False, index=False)
         df = pd.json_normalize(blood_percentage)
-        df.to_csv(csvname, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)
+        df.to_csv(blood_value_csvname, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)
 
 def initial_horse_line(individual_url,horse_line,position_x,position_y,oldhorse_url_list,blood_percentage):
     html = urllib.request.urlopen(individual_url)
@@ -56,8 +57,8 @@ def initial_horse_line(individual_url,horse_line,position_x,position_y,oldhorse_
                         horse_line[position_y*32][position_x] = parent_horse_name
                         position_x = position_x + 1
                         try:
-                            if(blood_percentage[parent_horse_name] != 0.0):
-                                blood_percentage[parent_horse_name] = blood_percentage[parent_horse_name] + 1.0 / pow(2,(position_x))
+                            if(blood_percentage[1] != 0.0):
+                                blood_percentage[1] = blood_percentage[1] + 1.0 / pow(2,(position_x))
                         except KeyError:
                             blood_percentage[parent_horse_name] = 1.0 / pow(2,(position_x))
                         # print(parent_horse_name)
