@@ -1,1025 +1,962 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"horse_name","percentage"
+"ディープインパクト","50.0"
+"サンデーサイレンス","25.0"
+"Halo","12.5"
+"Hail to Reason","6.4453125"
+"Turn-to","4.00390625"
+"Nothirdchance","3.22265625"
+"Cosmah","6.25"
+"Cosmic Bomb","3.125"
+"Almahmoud","4.6875"
+"Wishing Well","12.5"
+"Understanding","6.25"
+"Promised Land","3.125"
+"Pretty Ways","3.125"
+"Mountain Flower","6.25"
+"Montparnasse","3.125"
+"Edelweiss","3.125"
+"ウインドインハーヘア","25.0"
+"Alzao","12.5"
+"Lyphard","7.8125"
+"Northern Dancer","6.25"
+"Goofed","3.90625"
+"Lady Rebecca","6.25"
+"Sir Ivor","3.125"
+"Pocahontas","3.125"
+"Burghclere","12.5"
+"Busted","6.25"
+"Crepello","3.125"
+"Sans le Sou","3.125"
+"Highclere","6.25"
+"Queen's Hussar","3.125"
+"Highlight","3.125"
+"ロードクロサイト","50.0"
+"Unbridled's Song","25.0"
+"Unbridled","12.5"
+"Fappiano","9.375"
+"Mr. Prospector","6.25"
+"Killaloe","6.25"
+"Gana Facil","6.25"
+"Le Fabuleux","3.125"
+"Charedi","3.125"
+"Trolley Song","12.5"
+"Caro","6.25"
+"フォルティノ","3.125"
+"Chambord","3.125"
+"Lucky Spell","6.25"
+"Lucky Mel","3.125"
+"Incantation","4.6875"
+"Folklore","25.0"
+"Tiznow","12.5"
+"Cee's Tizzy","6.25"
+"Relaunch","3.125"
+"テイズリー","3.125"
+"Cee's Song","6.25"
+"Seattle Song","3.125"
+"Lonely Dancer","3.125"
+"Contrive","12.5"
+"Storm Cat","6.25"
+"Storm Bird","3.125"
+"Terlingua","3.125"
+"Jeano","6.25"
+"バジー","3.125"
+"Royal Charger","2.734375"
+"Nearco","3.90625"
+"Pharos","2.5390625"
+"Phalaris","3.41796875"
+"Polymelus","1.3671875"
+"Bromus","1.26953125"
+"Scapa Flow","1.7578125"
+"Chaucer","1.85546875"
+"Anchora","0.48828125"
+"Nogara","2.05078125"
+"Havresac","0.87890625"
+"Rabelais","1.171875"
+"Hors Concours","0.1953125"
+"Catnip","0.78125"
+"Spearmint","1.46484375"
+"Sibola","0.1953125"
+"Sun Princess","1.3671875"
+"Solario","1.953125"
+"Gainsborough","4.1015625"
+"Bayardo","1.5625"
+"Rosedrop","1.5625"
+"Sun Worship","0.87890625"
+"Sundridge","0.87890625"
+"Doctrine","0.390625"
+"Mumtaz Begum","1.66015625"
+"Blenheim","4.39453125"
+"Blandford","2.5390625"
+"Malva","1.7578125"
+"Mumtaz Mahal","1.7578125"
+"The Tetrarch","1.171875"
+"Lady Josephine","0.9765625"
+"Source Sucree","1.953125"
+"Admiral Drake","0.9765625"
+"Craig an Eran","0.48828125"
+"Sunstar","0.78125"
+"Doris","0.1953125"
+"Maid of the Mist","0.390625"
+"Cyllene","0.68359375"
+"Sceptre","0.09765625"
+"Plucky Liege","2.24609375"
+"Carbine","0.48828125"
+"Maid of the Mint","0.48828125"
+"Concertina","0.78125"
+"St. Simon","1.171875"
+"Comic Song","0.29296875"
+"Lavendula","0.9765625"
+"Sweet Lavender","0.48828125"
+"Swynford","2.1484375"
+"John o'Gaunt","0.78125"
+"Canterbury Pilgrim","1.171875"
+"Marchetta","0.390625"
+"Marco","0.390625"
+"Hettie Sorrel","0.1953125"
+"Blue Swords","1.5625"
+"Blue Larkspur","2.34375"
+"Black Servant","0.87890625"
+"Black Toney","0.87890625"
+"Peter Pan","0.48828125"
+"Belgravia","0.29296875"
+"Padula","0.390625"
+"Laveno","0.1953125"
+"Padua","0.1953125"
+"Blossom Time","0.87890625"
+"North Star","0.390625"
+"Angelic","0.1953125"
+"Vaila","0.5859375"
+"Fariman","0.29296875"
+"Padilla","0.29296875"
+"Flaming Swords","0.78125"
+"Man o'War","2.734375"
+"Fair Play","1.171875"
+"Hastings","0.29296875"
+"Fairy Gold","0.29296875"
+"Mahubah","0.9765625"
+"Rock Sand","0.1953125"
+"Merry Token","0.1953125"
+"Exalted","0.390625"
+"High Time","0.1953125"
+"Ultimus","0.68359375"
+"Noonday","0.09765625"
+"Lady Comfey","0.29296875"
+"Roi Herode","0.48828125"
+"Snoot","0.09765625"
+"Galla Colors","1.5625"
+"Sir Gallahad","2.44140625"
+"Teddy","3.125"
+"Ajax","1.07421875"
+"Flying Fox","0.29296875"
+"Amie","0.29296875"
+"Rondeau","0.9765625"
+"Bay Ronald","0.68359375"
+"Doremi","0.29296875"
+"Rouge et Noir","0.78125"
+"St. Germans","0.390625"
+"Hamoaze","0.48828125"
+"Torpoint","0.1953125"
+"Baton Rouge","0.390625"
+"Baton","0.1953125"
+"Hainault","0.29296875"
+"Batanoea","0.09765625"
+"Pharamond","2.44140625"
+"Bona Vista","0.09765625"
+"Arcadia","0.09765625"
+"Maid Marian","0.1953125"
+"Hampton","0.09765625"
+"Quiver","0.09765625"
+"Sainfoin","0.390625"
+"Springfield","0.09765625"
+"Sanda","0.09765625"
+"Cheery","0.1953125"
+"Sunrise","0.09765625"
+"Selene","2.9296875"
+"Galopin","0.1953125"
+"St. Angela","0.1953125"
+"Tristan","0.09765625"
+"Pilgrimage","0.09765625"
+"Serenissima","1.46484375"
+"Minoru","0.48828125"
+"Mother Siegel","0.09765625"
+"Gondolette","0.48828125"
+"Loved One","0.09765625"
+"Dongola","0.09765625"
+"Banish Fear","1.5625"
+"Herodiade","0.78125"
+"Over There","0.390625"
+"Summer Girl","0.1953125"
+"Permission","0.09765625"
+"Herodias","0.390625"
+"Vahren","0.1953125"
+"Honora","0.1953125"
+"Gallinule","0.29296875"
+"Word of Honour","0.09765625"
+"Mahmoud","5.46875"
+"Blanche","0.87890625"
+"White Eagle","0.78125"
+"Black Cherry","0.390625"
+"Charles O'Malley","0.48828125"
+"Desmond","0.29296875"
+"Goody Two-Shoes","0.1953125"
+"Wild Arum","0.48828125"
+"Robert le Diable","0.1953125"
+"Marliacea","0.1953125"
+"Mah Mahal","2.5390625"
+"Galicia","0.390625"
+"St. Frusquin","0.48828125"
+"Rosaline","0.390625"
+"Americus Girl","0.1953125"
+"Arbitrator","2.34375"
+"Peace Chance","1.07421875"
+"Chance Shot","0.48828125"
+"Quelle Chance","0.1953125"
+"Ethelbert","0.09765625"
+"Qu'elle est Belle","0.09765625"
+"Peace","0.48828125"
+"Stefan the Great","0.29296875"
+"Perfect Peach","0.09765625"
+"Memories","0.1953125"
+"Wallflower","0.09765625"
+"Mother Goose","1.07421875"
+"Chicle","0.5859375"
+"Lady Hamburg","0.1953125"
+"Hamburg","0.09765625"
+"Lady Frivoles","0.09765625"
+"Flying Witch","0.48828125"
+"Broomstick","0.48828125"
+"Ben Brush","0.09765625"
+"Elf","0.09765625"
+"Fly by Night","0.1953125"
+"Dazzling","0.09765625"
+"Palestinian","1.5625"
+"Sun Again","0.9765625"
+"Sun Teddy","0.48828125"
+"Sunmelia","0.1953125"
+"Sun Briar","0.09765625"
+"Bromelia","0.09765625"
+"Hug Again","0.48828125"
+"Stimulus","0.68359375"
+"Hurakan","0.29296875"
+"Affection","0.1953125"
+"Isidor","0.09765625"
+"One I Love","0.09765625"
+"Dolly Whisk","0.78125"
+"Whiskaway","0.390625"
+"Whisk Broom","0.29296875"
+"Audience","0.09765625"
+"Inaugural","0.1953125"
+"Voter","0.1953125"
+"Court Dress","0.09765625"
+"Dolly Seth","0.390625"
+"Seth","0.1953125"
+"Adam","0.09765625"
+"Purity","0.09765625"
+"Royal Dolly","0.1953125"
+"Right Royal","0.09765625"
+"Pretty Dolly","0.09765625"
+"Mahmoudess","1.5625"
+"Forever Yours","0.78125"
+"Toro","0.390625"
+"The Porter","0.1953125"
+"Sweep","0.1953125"
+"Ballet Girl","0.09765625"
+"Brocatelle","0.1953125"
+"Radium","0.390625"
+"Pietra","0.09765625"
+"Winsome Way","0.390625"
+"Tetratema","0.390625"
+"Scotch Gift","0.1953125"
+"Last Ray","0.1953125"
+"Addenda","0.09765625"
+"Stymie","1.5625"
+"Equestrian","0.78125"
+"Equipoise","0.48828125"
+"Pennant","0.1953125"
+"Royal Rose","0.09765625"
+"Swinging","0.1953125"
+"Balancoire","0.09765625"
+"Frilette","0.390625"
+"Frillery","0.1953125"
+"Petticoat","0.09765625"
+"Stop Watch","0.78125"
+"On Watch","0.390625"
+"Colin","0.1953125"
+"Commando","0.29296875"
+"Pastorella","0.09765625"
+"Rubia Granda","0.1953125"
+"Greenman","0.09765625"
+"The Great Ruby","0.09765625"
+"Sunset Gun","0.390625"
+"Eventide","0.1953125"
+"Uncle","0.1953125"
+"Noontide","0.09765625"
+"Pretty Jo","1.5625"
+"Bull Lea","0.9765625"
+"Bull Dog","2.44140625"
+"Rose Leaves","0.48828125"
+"Ballot","0.1953125"
+"Cerito","0.09765625"
+"Colonial","0.1953125"
+"Trenton","0.09765625"
+"Thankful Blossom","0.09765625"
+"Fib","0.78125"
+"Westy Hogan","0.390625"
+"Dick Finnell","0.1953125"
+"King Eric","0.09765625"
+"Tea's Over","0.09765625"
+"Carrie Jones","0.1953125"
+"Requital","0.09765625"
+"Intermission","0.09765625"
+"Hyperbole","0.390625"
+"Jack Atkin","0.1953125"
+"Sain","0.09765625"
+"El Salado","0.09765625"
+"Land League","0.1953125"
+"Combine","0.09765625"
+"Gulf Stream","1.5625"
+"Hyperion","3.61328125"
+"Tide-way","0.78125"
+"Fairway","1.66015625"
+"Drift","0.87890625"
+"Santa Cruz","0.390625"
+"Neil Gow","0.1953125"
+"Santa Brigida","0.29296875"
+"Mignon","1.953125"
+"Fox Cub","0.78125"
+"Foxhunter","0.390625"
+"Foxlaw","0.1953125"
+"Son-in-Law","1.07421875"
+"Alope","0.29296875"
+"Trimestral","0.1953125"
+"William the Third","0.1953125"
+"Mistrella","0.09765625"
+"Dorina","0.5859375"
+"La Farina","0.68359375"
+"Sans Souci","0.29296875"
+"Malatesta","0.29296875"
+"Dora Agnes","0.29296875"
+"D'Amour","0.09765625"
+"Mi Condesa","0.78125"
+"Barranquero","0.390625"
+"Verdun","0.1953125"
+"Vellena","0.09765625"
+"Barandilla","0.1953125"
+"Sardanapale","0.1953125"
+"Boudra","0.09765625"
+"Pethy","0.390625"
+"Tiny","0.1953125"
+"Jardy","0.09765625"
+"La Nenita","0.09765625"
+"La Pinguina","0.1953125"
+"Calepino","0.09765625"
+"Cherette","0.09765625"
+"Hillary","1.5625"
+"Khaled","0.78125"
+"Eclair","0.390625"
+"Ethnarch","0.1953125"
+"Karenza","0.09765625"
+"Black Ray","0.29296875"
+"Black Jester","0.1953125"
+"Lady Brilliant","0.09765625"
+"Snow Bunny","0.78125"
+"Boswell","0.390625"
+"Bosworth","0.1953125"
+"Flying Gal","0.1953125"
+"Filante","0.09765625"
+"La Rose","0.390625"
+"Jacopo","0.1953125"
+"Sansovino","0.09765625"
+"La Rambla","0.1953125"
+"La Rablee","0.09765625"
+"Dowager","1.5625"
+"Free France","0.78125"
+"La France","0.48828125"
+"Flambette","0.1953125"
+"Durbar","0.09765625"
+"La Flambee","0.09765625"
+"Marcellina","0.78125"
+"Figaro","0.390625"
+"Colorado","0.1953125"
+"Canyon","0.09765625"
+"Tillywhim","0.1953125"
+"Lily Rose","0.09765625"
+"Belle Mere","0.390625"
+"Dark Ronald","0.390625"
+"Mother in Law","0.29296875"
+"Cinna","0.1953125"
+"Baroness La Fleche","0.09765625"
+"Nearctic","3.125"
+"Lady Angela","1.5625"
+"Sister Sarah","0.78125"
+"Abbots Trace","0.29296875"
+"Tracery","0.29296875"
+"Abbots Anne","0.09765625"
+"Sarita","0.29296875"
+"Molly Desmond","0.09765625"
+"Natalma","3.125"
+"Native Dancer","3.125"
+"Polynesian","1.66015625"
+"Unbreakable","0.68359375"
+"Sickle","0.5859375"
+"Blue Glass","0.1953125"
+"Black Polly","0.68359375"
+"Polymelian","0.390625"
+"Black Queen","0.1953125"
+"Geisha","1.5625"
+"Discovery","1.26953125"
+"Display","0.5859375"
+"Ariadne","0.48828125"
+"Miyako","0.68359375"
+"John P. Grier","0.1953125"
+"La Chica","0.1953125"
+"Court Martial","2.734375"
+"Fair Trial","2.1484375"
+"Lady Juror","1.07421875"
+"Instantaneous","1.3671875"
+"Hurry On","1.07421875"
+"Marcovil","0.48828125"
+"Lady Villikins","0.1953125"
+"Tout Suite","0.48828125"
+"Star","0.1953125"
+"Picture","0.68359375"
+"Plymstock","0.29296875"
+"Winkipop","0.09765625"
+"Barra","1.953125"
+"Formor","0.9765625"
+"Ksar","0.78125"
+"Bruleur","0.390625"
+"Chouberski","0.1953125"
+"Basse Terre","0.1953125"
+"Kizil Kourgan","0.29296875"
+"Omnium","0.09765625"
+"Kasbah","0.09765625"
+"Formose","0.48828125"
+"Clarissimus","0.5859375"
+"Quintessence","0.29296875"
+"Terre Neuve","0.1953125"
+"Nimbus","0.09765625"
+"La Favorite","0.9765625"
+"Biribi","0.48828125"
+"Satirical","0.390625"
+"La Bidouze","0.1953125"
+"La Bidassoa","0.09765625"
+"La Pompadour","0.48828125"
+"Fly Away","0.1953125"
+"Alcantara","0.48828125"
+"Cerda","0.09765625"
+"Sir Gaylord","1.5625"
+"Somethingroyal","1.5625"
+"Princequillo","3.61328125"
+"Prince Rose","1.7578125"
+"Rose Prince","0.78125"
+"Indolence","0.78125"
+"Cosquilla","1.7578125"
+"Papyrus","0.87890625"
+"Quick Thought","0.78125"
+"Imperatrice","0.78125"
+"Caruso","0.390625"
+"Sweet Music","0.1953125"
+"Cinquepace","0.390625"
+"Brown Bud","0.1953125"
+"Assignation","0.1953125"
+"Attica","1.5625"
+"Mr. Trouble","0.78125"
+"Motto","0.390625"
+"Maxima","0.1953125"
+"Sir Martin","0.09765625"
+"Minima","0.09765625"
+"Athenia","0.78125"
+"Salaminia","0.390625"
+"Alcibiades","0.390625"
+"Supremus","0.09765625"
+"Regal Roman","0.09765625"
+"Roman","1.5625"
+"Buckup","0.78125"
+"Buchan","0.9765625"
+"Look Up","0.390625"
+"Running Stream","0.1953125"
+"Sweeping Glance","0.1953125"
+"Reginella","0.09765625"
+"How","1.5625"
+"Prince Palatine","0.1953125"
+"Eglantine","0.1953125"
+"Gay Crusader","0.1953125"
+"Barrier","0.1953125"
+"Miss Matty","0.1953125"
+"Mindful","0.1953125"
+"The Squaw","0.78125"
+"Minnewaska","0.390625"
+"Nipisiquit","0.1953125"
+"Herself","0.09765625"
+"Donatello","1.5625"
+"Delleana","0.78125"
+"Bend Or","0.09765625"
+"Taia","0.09765625"
+"Margarine","0.09765625"
+"Duccia di Buoninsegna","0.390625"
+"Bridge of Earn","0.1953125"
+"Dutch Mary","0.1953125"
+"Pretty Polly","0.09765625"
+"Crepuscule","1.5625"
+"Mieuxce","0.78125"
+"Massine","0.390625"
+"Consols","0.1953125"
+"Doricles","0.09765625"
+"Console","0.09765625"
+"Mauri","0.1953125"
+"La Camargo","0.09765625"
+"L'Olivete","0.390625"
+"Opott","0.1953125"
+"Maximum","0.09765625"
+"Oussouri","0.09765625"
+"Jonicole","0.1953125"
+"St. Just","0.09765625"
+"Sainte Fiole","0.09765625"
+"Red Sunset","0.78125"
+"Dulce","0.390625"
+"Asterus","0.1953125"
+"Astrella","0.09765625"
+"ヴィミー","1.5625"
+"Wild Risk","2.5390625"
+"Rialto","1.26953125"
+"La Grelee","0.5859375"
+"Helicon","0.29296875"
+"Grignousse","0.29296875"
+"Wild Violet","1.26953125"
+"Wood Violet","0.5859375"
+"Pervencheres","0.29296875"
+"Mimi","0.78125"
+"Black Devil","0.390625"
+"La Palina","0.1953125"
+"Ambassador","0.09765625"
+"Parthenis","0.09765625"
+"Epinard","0.1953125"
+"Badajoz","0.09765625"
+"Epine Blanche","0.09765625"
+"Mammee","0.1953125"
+"Mackwiller","0.09765625"
+"Martial Loan","1.5625"
+"Loan","0.78125"
+"Portlaw","0.390625"
+"Beresford","0.1953125"
+"Friar Marcus","0.48828125"
+"Bayberry","0.09765625"
+"Portree","0.1953125"
+"Saddlemark","0.09765625"
+"Borrow","0.390625"
+"Tremola","0.1953125"
+"Tredennis","0.1953125"
+"Bachelor's Beauty","0.09765625"
+"Booktalk","0.1953125"
+"Tete-a-Tete","0.09765625"
+"March Past","1.5625"
+"Petition","0.78125"
+"Art Paper","0.390625"
+"Artist's Proof","0.1953125"
+"Clear Evidence","0.09765625"
+"Quire","0.1953125"
+"Fairy King","0.09765625"
+"Queen Carbine","0.09765625"
+"Marcelette","0.78125"
+"William of Valence","0.390625"
+"Vatout","0.1953125"
+"Prince Chimay","0.09765625"
+"Vasthi","0.09765625"
+"Queen Iseult","0.1953125"
+"Sweet Agnes","0.09765625"
+"Permavon","0.390625"
+"Stratford","0.1953125"
+"Lesbia","0.09765625"
+"Curl Paper","0.1953125"
+"Coila","0.09765625"
+"Jojo","1.5625"
+"Vilmorin","0.78125"
+"Gold Bridge","0.390625"
+"Golden Boss","0.1953125"
+"The Boss","0.09765625"
+"Golden Hen","0.09765625"
+"Flying Diadem","0.1953125"
+"Diadumenos","0.1953125"
+"Flying Bridge","0.09765625"
+"Queen of the Meadows","0.390625"
+"Queen of the Blues","0.1953125"
+"Bachelor's Double","0.390625"
+"Blue Fairy","0.09765625"
+"Fairy Jane","0.78125"
+"Light Tackle","0.390625"
+"Salmon-Trout","0.1953125"
+"Salamandra","0.09765625"
+"True Joy","0.1953125"
+"Stedfast","0.09765625"
+"Joyzelle","0.09765625"
+"Borealis","1.5625"
+"Brumeux","0.78125"
+"La Brume","0.390625"
+"Perth","0.1953125"
+"Toison d'or","0.1953125"
+"Aquarelle","0.390625"
+"Childwick","0.1953125"
+"Temesvar","0.1953125"
+"Aurora","0.78125"
+"Rose Red","0.390625"
+"Hypericum","1.5625"
+"Feola","0.78125"
+"Cicero","0.1953125"
+"Gas","0.09765625"
+"Prim Nun","0.1953125"
+"Persimmon","0.09765625"
+"Nunsuch","0.09765625"
+"Aloe","0.390625"
+"Altoviscar","0.09765625"
+"Raise a Native","3.125"
+"Raise You","1.5625"
+"Case Ace","0.78125"
+"Sweetheart","0.390625"
+"Humanity","0.09765625"
+"Lady Glory","0.78125"
+"American Flag","0.390625"
+"Beloved","0.390625"
+"Bill and Coo","0.09765625"
+"Gold Digger","3.125"
+"Nashua","1.5625"
+"Nasrullah","2.1484375"
+"Segula","0.78125"
+"Johnstown","0.390625"
+"Jamestown","0.09765625"
+"Sekhmet","0.390625"
+"Prosopopee","0.09765625"
+"Sequence","1.5625"
+"Count Fleet","0.87890625"
+"Reigh Count","0.390625"
+"Sunreigh","0.09765625"
+"Contessina","0.09765625"
+"Quickly","0.390625"
+"Haste","0.09765625"
+"Stephanie","0.1953125"
+"Miss Dogwood","0.78125"
+"Myrtlewood","0.390625"
+"Frizeur","0.09765625"
+"Dr. Fager","3.125"
+"Rough'n Tumble","2.34375"
+"Free For All","1.171875"
+"Questionnaire","0.5859375"
+"Sting","0.09765625"
+"Miss Puzzle","0.09765625"
+"Panay","0.5859375"
+"Panasette","0.09765625"
+"Roused","1.171875"
+"Rude Awakening","0.5859375"
+"Upset","0.09765625"
+"Cushion","0.09765625"
+"Aspidistra","2.34375"
+"Better Self","1.171875"
+"Bimelech","0.68359375"
+"La Troienne","0.390625"
+"Bee Mac","0.5859375"
+"War Admiral","0.390625"
+"Baba Kenny","0.1953125"
+"Tilly Rose","1.171875"
+"Bull Brier","0.5859375"
+"Rose Eternal","0.1953125"
+"Tilly Kate","0.5859375"
+"Draymont","0.1953125"
+"Teak","0.1953125"
+"Grand Splendor","3.125"
+"Correlation","1.5625"
+"Free America","0.78125"
+"Columbiana","0.390625"
+"Petee-Wrack","0.09765625"
+"Firetop","0.09765625"
+"Braydore","0.78125"
+"Roidore","0.390625"
+"Dorval","0.09765625"
+"Bray Beauty","0.390625"
+"Soulouque","0.09765625"
+"Bessie Belle","0.09765625"
+"Cequillo","1.5625"
+"Boldness","0.78125"
+"Hostility","0.390625"
+"Marguerite de Valois","0.09765625"
+"Satiety","0.09765625"
+"Chaff","0.09765625"
+"Vain Duchess","0.09765625"
+"Kilglass","0.09765625"
+"Simper","0.09765625"
+"Maboul","0.09765625"
+"Poet's Star","0.09765625"
+"Anguar","1.5625"
+"Verso","0.78125"
+"Pinceau","0.390625"
+"Variete","0.390625"
+"Vaya","0.1953125"
+"Beppo","0.09765625"
+"Waterhen","0.09765625"
+"La Rochelle","0.78125"
+"Easton","0.390625"
+"Dark Legend","0.1953125"
+"Golden Legend","0.09765625"
+"Phaona","0.1953125"
+"Destination","0.09765625"
+"Sans Tares","0.5859375"
+"Sind","0.29296875"
+"Mirawala","0.09765625"
+"Tara","0.29296875"
+"Jean Gow","0.09765625"
+"In Reality","3.125"
+"Intentionally","1.5625"
+"Intent","0.78125"
+"War Relic","1.171875"
+"Friar's Carse","0.5859375"
+"Liz F.","0.390625"
+"Bubbling Over","0.1953125"
+"Weno","0.1953125"
+"My Recipe","0.78125"
+"Perlette","0.390625"
+"Percentage","0.1953125"
+"Escarpolette","0.1953125"
+"My Dear Girl","1.5625"
+"Iltis","0.78125"
+"We Hail","0.390625"
+"Balladier","0.48828125"
+"Clonaslee","0.48828125"
+"Magic","1.5625"
+"Buckpasser","0.78125"
+"Tom Fool","0.5859375"
+"Menow","0.48828125"
+"Gaga","0.29296875"
+"Alpoise","0.09765625"
+"Busanda","0.390625"
+"Brushup","0.09765625"
+"Businesslike","0.1953125"
+"Grey Sovereign","1.5625"
+"Kong","0.78125"
+"Baytown","0.390625"
+"Achtoi","0.1953125"
+"Santoi","0.09765625"
+"Achray","0.09765625"
+"Princess Herodias","0.1953125"
+"Poor Boy","0.09765625"
+"Queen Herodias","0.09765625"
+"Clang","0.390625"
+"Vibration","0.1953125"
+"Radiancy","0.09765625"
+"Ranavalo","1.5625"
+"Relic","0.78125"
+"Friar Rock","0.09765625"
+"Problem","0.09765625"
+"Bridal Colors","0.390625"
+"Navarra","0.78125"
+"Orsenigo","0.390625"
+"Oleander","0.1953125"
+"Prunus","0.09765625"
+"Orchidee","0.09765625"
+"Ostana","0.1953125"
+"Olba","0.09765625"
+"Nervesa","0.390625"
+"Ortello","0.1953125"
+"Hollebeck","0.09765625"
+"Chamossaire","1.5625"
+"Precipitation","0.87890625"
+"Double Life","0.390625"
+"Lady Bawn","0.09765625"
+"Saint Joan","0.1953125"
+"Willbrook","0.09765625"
+"Flo Desmond","0.09765625"
+"Snowberry","0.78125"
+"Cameronian","0.390625"
+"Una Cameron","0.1953125"
+"Cherimoya","0.09765625"
+"Myrobella","0.390625"
+"Dolabella","0.1953125"
+"Life Hill","1.5625"
+"Amphion","0.09765625"
+"Sierra","0.09765625"
+"Ayrshire","0.1953125"
+"Axiom","0.09765625"
+"Lady of the Snows","0.78125"
+"Manna","0.390625"
+"Waffles","0.1953125"
+"Buckwheat","0.09765625"
+"Lady Mischief","0.09765625"
+"Arctic Night","0.390625"
+"Merry Gal","0.09765625"
+"Jean's Folly","0.1953125"
+"Olympia","1.953125"
+"Heliopolis","0.9765625"
+"Miss Dolphin","0.9765625"
+"The Hoyden","0.09765625"
+"Tinamou","0.48828125"
+"Light Brigade","0.29296875"
+"Picton","0.09765625"
+"Bridge of Sighs","0.09765625"
+"Casuarina","0.1953125"
+"Plaudit","0.09765625"
+"Nun's Cloth","0.09765625"
+"Royal Mink","1.5625"
+"Madeh","0.78125"
+"Via Media","0.390625"
+"Zionist","0.1953125"
+"Judea","0.09765625"
+"Va Sano","0.1953125"
+"Pilgrim's Way","0.09765625"
+"Prince Blessed","2.34375"
+"Dog Blessed","1.171875"
+"Blessed Again","0.5859375"
+"Orpiment","0.09765625"
+"Bullet Proof","0.09765625"
+"Magic Spell","2.34375"
+"Flushing","1.171875"
+"Callandar","0.5859375"
+"Calendula","0.29296875"
+"Callista","0.09765625"
+"Subterranean","1.171875"
+"By Jimminy","0.5859375"
+"Buginarug","0.29296875"
+"Breakfast Bell","0.09765625"
+"U-Boat","0.5859375"
+"Artifice","0.29296875"
+"American Beauty","0.09765625"
+"Foggy Note","1.5625"
+"The Axe","0.78125"
+"Blackball","0.390625"
+"Shut Out","0.1953125"
+"Goose Egg","0.09765625"
+"Big Event","0.1953125"
+"Silver Song","0.78125"
+"Royal Note","0.390625"
+"Spy Song","0.5859375"
+"Mata Hari","0.29296875"
+"Penroyal","0.1953125"
+"Royal Minstrel","0.09765625"
+"Penelope","0.09765625"
+"Beadah","0.390625"
+"Djeddah","0.1953125"
+"Djebel","0.1953125"
+"Djezima","0.09765625"
+"Beauty Spot","0.1953125"
+"Spotted Beauty","0.09765625"
+"Tizna","1.5625"
+"Trevieres","0.78125"
+"Worden","0.390625"
+"Vamarie","0.390625"
+"Clarion","0.1953125"
+"Columba","0.09765625"
+"Winona","0.1953125"
+"Loaningdale","0.09765625"
+"Anne de Bretagne","0.09765625"
+"Noris","0.78125"
+"Licencioso","0.390625"
+"L 'Oriflamme","0.1953125"
+"Madrigal","0.09765625"
+"Outarde","0.09765625"
+"Arimathea","0.1953125"
+"Courtisan","0.09765625"
+"Ariege","0.09765625"
+"Nizarda","0.390625"
+"Cuarteto","0.1953125"
+"Tresiete","0.09765625"
+"Certificada","0.09765625"
+"Niza","0.1953125"
+"Ilion","0.09765625"
+"Enredada","0.09765625"
+"Seattle Slew","1.5625"
+"Bold Reasoning","0.78125"
+"Boldnesian","0.390625"
+"Bold Ruler","0.9765625"
+"Miss Disco","0.48828125"
+"Alanesian","0.1953125"
+"Alablue","0.09765625"
+"Reason to Earn","0.390625"
+"Sailing Home","0.1953125"
+"Wait A Bit","0.09765625"
+"Marching Home","0.09765625"
+"My Charmer","0.78125"
+"Poker","0.390625"
+"Round Table","0.1953125"
+"Knights Daughter","0.09765625"
+"Glamour","0.1953125"
+"Striking","0.09765625"
+"Fair Charmer","0.390625"
+"Jet Action","0.1953125"
+"Jet Pilot","0.09765625"
+"Busher","0.09765625"
+"Myrtle Charm","0.1953125"
+"Alsab","0.09765625"
+"Crepe Myrtle","0.09765625"
+"ナイスダンサー","1.5625"
+"Nice Princess","0.78125"
+"Le Beau Prince","0.390625"
+"Fontenay","0.1953125"
+"Tornado","0.09765625"
+"Flying Colours","0.09765625"
+"Quillerie","0.1953125"
+"Sultan Mahomed","0.09765625"
+"Hotep Heres","0.09765625"
+"Happy Night","0.390625"
+"Alizier","0.1953125"
+"Teleferique","0.09765625"
+"Alizarine","0.09765625"
+"Happy Grace","0.1953125"
+"His Grace","0.09765625"
+"Happy Morn","0.09765625"
+"Sleep Lonely","1.5625"
+"Pia Star","0.78125"
+"Inquisitive","0.390625"
+"Swistar","0.1953125"
+"Pavot","0.09765625"
+"Schwester","0.09765625"
+"Sulenan","0.78125"
+"トンピオン","0.390625"
+"Sunlight","0.1953125"
+"Halcyon Days","0.09765625"
+"Blue Canary","0.390625"
+"Buy and Sell","0.1953125"
+"Blinking Owl","0.09765625"
+"Papila","0.5859375"
+"Requiebro","0.29296875"
+"Papalona","0.29296875"
+"South Ocean","1.5625"
+"New Providence","0.78125"
+"Bull Page","0.390625"
+"Our Page","0.1953125"
+"Occult","0.09765625"
+"Fair Colleen","0.390625"
+"Preciptic","0.1953125"
+"Artistic","0.09765625"
+"Fairvale","0.1953125"
+"Fairford","0.09765625"
+"Vallema","0.09765625"
+"Shining Sun","0.78125"
+"Chop Chop","0.390625"
+"Flares","0.1953125"
+"Gallant Fox","0.09765625"
+"Flambino","0.09765625"
+"Sceptical","0.1953125"
+"Clodagh","0.09765625"
+"Solar Display","0.390625"
+"Dark Display","0.1953125"
+"Dark Loveliness","0.09765625"
+"Secretariat","1.5625"
+"Outdone","0.1953125"
+"Pompey","0.09765625"
+"Sweep Out","0.09765625"
+"Crimson Saint","1.5625"
+"Crimson Satan","0.78125"
+"Blue Warbler","0.09765625"
+"Peter Hastings","0.09765625"
+"War Woman","0.09765625"
+"Re-Echo","0.09765625"
+"Trepadora","0.09765625"
+"Papanatas","0.09765625"
+"Tarumba","0.09765625"
+"Bolero Rose","0.78125"
+"Bolero","0.390625"
+"Eight Thirty","0.1953125"
+"Pilate","0.09765625"
+"Dinner Time","0.09765625"
+"Stepwisely","0.1953125"
+"Wise Counsellor","0.09765625"
+"First Rose","0.390625"
+"Rare Bloom","0.1953125"
+"Rowes Bud","0.09765625"

@@ -24,7 +24,26 @@ def main():
         oldhorse_url_list = [] 
         position_x = 0
         position_y = 0
-        blood_percentage = np.empty((1024,2),dtype='U20')
+
+        # 血量テスト
+        blood_percentage = []
+        # blood_percentage_dict ={}
+        # blood_percentage_dict["horse_name"] = horse_name
+        # blood_percentage_dict.setdefault("percentage",1.0)
+        # key_value = blood_percentage_dict.setdefault("percentage",1.0)
+        # if(key_value != 0):
+        #     blood_percentage_tmp = key_value + 0.5
+        #     blood_percentage_dict["percentage"] = blood_percentage_tmp
+        # blood_percentage.append(blood_percentage_dict)
+
+        # blood_percentage_dict ={}
+        # for i in range (0,len(blood_percentage)):
+        #     if(blood_percentage[i]["horse_name"] == horse_name):
+        #         blood_percentage_tmp = blood_percentage[i]["percentage"] + 0.6
+        #         blood_percentage[i]["percentage"] = blood_percentage_tmp
+        #         break
+        
+        
         initial_horse_line(url,horse_line,position_x,position_y,oldhorse_url_list,blood_percentage)
         iteration = 0
         for several_url in oldhorse_url_list:
@@ -56,11 +75,18 @@ def initial_horse_line(individual_url,horse_line,position_x,position_y,oldhorse_
                         parent_horse_name = cell.get_text()[1:newline_number]
                         horse_line[position_y*32][position_x] = parent_horse_name
                         position_x = position_x + 1
-                        try:
-                            if(blood_percentage[1] != 0.0):
-                                blood_percentage[1] = blood_percentage[1] + 1.0 / pow(2,(position_x))
-                        except KeyError:
-                            blood_percentage[parent_horse_name] = 1.0 / pow(2,(position_x))
+                        blood_percentage_dict ={}
+                        blood_append_flag = 0
+                        for i in range (0,len(blood_percentage)):
+                            if(blood_percentage[i]["horse_name"] == parent_horse_name):
+                                blood_percentage_tmp = blood_percentage[i]["percentage"] + 100 / pow(2,(position_x))
+                                blood_percentage[i]["percentage"] = blood_percentage_tmp
+                                blood_append_flag = 1
+                                break
+                        blood_percentage_dict["horse_name"] = parent_horse_name
+                        blood_percentage_dict.setdefault("percentage",100.0 / pow(2,(position_x)))
+                        if(blood_append_flag == 0):
+                            blood_percentage.append(blood_percentage_dict)
                         # print(parent_horse_name)
                         Row.append(parent_horse_name)
                         if(position_x == 5):
@@ -109,12 +135,18 @@ def add_horse_line(individual_url,horse_matrix,position_x,position_y,blood_perce
                         parent_horse_name = cell.get_text()[1:newline_number]
                         horse_matrix[position_y][position_x] = parent_horse_name
                         position_x = position_x + 1
-                        try:
-                            if(blood_percentage[parent_horse_name] != 0.0):
-                                blood_percentage[parent_horse_name] = blood_percentage[parent_horse_name] + 1.0 / pow(2,(position_x))
-                        except KeyError:
-                            blood_percentage[parent_horse_name] = 1.0 / pow(2,(position_x))
-                        # print(parent_horse_name)
+                        blood_percentage_dict ={}
+                        blood_append_flag = 0
+                        for i in range (0,len(blood_percentage)):
+                            if(blood_percentage[i]["horse_name"] == parent_horse_name):
+                                blood_percentage_tmp = blood_percentage[i]["percentage"] + 100 / pow(2,(position_x))
+                                blood_percentage[i]["percentage"] = blood_percentage_tmp
+                                blood_append_flag = 1
+                                break
+                        blood_percentage_dict["horse_name"] = parent_horse_name
+                        blood_percentage_dict.setdefault("percentage",100.0 / pow(2,(position_x)))
+                        if(blood_append_flag == 0):
+                            blood_percentage.append(blood_percentage_dict)
                         Row.append(parent_horse_name)
                     except IndexError:
                         continue
