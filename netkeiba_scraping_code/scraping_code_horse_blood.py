@@ -14,23 +14,14 @@ def main():
     year = 2021
     horse_list = []
     horse_list_csv = "horse_list.csv"
-    for circuit in range(1,11):
-        for number_iteration in range(1,6):
-            for days in range(1,13):
-                for races in range(1,12):
-                    race_url = race_base_url + str(f'{year:0}') + str(f'{circuit:02}') + str(f'{number_iteration:02}') + str(f'{days:02}') + str(f'{races:02}')
-                    # print(race_url)
-                    get_race_list(horse_list,race_url)
-                    # print(horse_list)
-                    if(horse_list == []):
-                        continue
-    
-    np.savetxt(horse_list_csv, horse_list, delimiter =",",fmt ='% s')
-    # horse_list = []
-    # horse_list = np.loadtxt(horse_list_csv, delimiter =",", dtype='str')
-    # print(horse_list[0])
-    # for individual_horse_url in horse_list:
-        # horse_one_step(individual_horse_url)
+    # add_racelist_to_horselist(horse_list,year)
+    # print(horse_list)
+    # np.savetxt(horse_list_csv, horse_list, delimiter =",",fmt ='% s')
+    horse_list = []
+    horse_list = np.loadtxt(horse_list_csv, delimiter =",", dtype='str')
+    print(horse_list[0])
+    for individual_horse_url in horse_list:
+        horse_one_step(individual_horse_url)
 
 def horse_one_step(url):
     print(url)
@@ -185,6 +176,19 @@ def get_race_list(horse_list,race_url):
                 except AttributeError:
                     continue
         break
+
+def add_racelist_to_horselist(horse_list,year):
+    race_base_url = "https://race.netkeiba.com/race/shutuba.html?race_id="
+    for circuit in range(1,11):
+        for number_iteration in range(1,6):
+            for days in range(1,13):
+                for races in range(10,13):
+                    race_url = race_base_url + str(f'{year:0}') + str(f'{circuit:02}') + str(f'{number_iteration:02}') + str(f'{days:02}') + str(f'{races:02}')
+                    # print(race_url)
+                    get_race_list(horse_list,race_url)
+                    # print(horse_list)
+                    if(horse_list == []):
+                        continue
 
 if __name__ == "__main__":
     main()
