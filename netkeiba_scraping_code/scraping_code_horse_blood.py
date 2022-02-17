@@ -1,5 +1,6 @@
 import csv
 from multiprocessing.connection import wait
+from unittest import result
 from urllib.parse import urlencode
 import time
 import urllib.request
@@ -8,22 +9,28 @@ import pandas as pd
 import os
 from bs4 import BeautifulSoup
 def main():
-    url = "https://db.netkeiba.com/horse/ped/2017101835"
-    # race_url = "https://race.netkeiba.com/race/shutuba.html?race_id=202109010101"
-    race_base_url = "https://race.netkeiba.com/race/shutuba.html?race_id="
     year = 2021
-    horse_list = []
-    horse_list_csv = "horse_list.csv"
-    # add_racelist_to_horselist(horse_list,year)
-    # print(horse_list)
-    # np.savetxt(horse_list_csv, horse_list, delimiter =",",fmt ='% s')
-    horse_list = []
-    horse_list = np.loadtxt(horse_list_csv, delimiter =",", dtype='str')
-    print(horse_list[0])
-    for individual_horse_url in horse_list:
-        horse_one_step(individual_horse_url)
+    horse_blood_list = []
+    horse_blood_list_csv = "horse_blood_list.csv"
+    horse_result_list = []
+    horse_result_list_csv = "horse_result_list.csv"
 
-def horse_one_step(url):
+    # add_racelist_to_horselist(horse_blood_list,horse_result_list,year)
+    # print(horse_blood_list)
+    # np.savetxt(horse_blood_list_csv, horse_blood_list, delimiter =",",fmt ='% s')
+    # np.savetxt(horse_result_list_csv, horse_result_list, delimiter =",",fmt ='% s')
+    
+    horse_blood_list = []
+    horse_blood_list = np.loadtxt(horse_blood_list_csv, delimiter =",", dtype='str')
+    horse_result_list = []
+    horse_result_list = np.loadtxt(horse_result_list_csv, delimiter =",", dtype='str')
+
+    # for individual_horse_url in horse_blood_list:
+        # horse_one_step_blood(individual_horse_url)
+    for individual_horse_url in horse_result_list:
+        horse_one_step_result(individual_horse_url)
+
+def horse_one_step_blood(url):
     print(url)
     horse_name,soup = url_parser(url)
 
@@ -33,6 +40,9 @@ def horse_one_step(url):
     os.makedirs(blood_data_folder, exist_ok=True)
     os.makedirs(blood_value_folder, exist_ok=True)
     csvname = blood_data_folder + horse_name + ".csv"
+    if(os.path.exists(csvname)):
+        print("this file is exist")
+        return
     blood_value_csvname = blood_value_folder + horse_name + ".csv"
     oldhorse_url_list = [] 
     position_x = 0
@@ -156,10 +166,10 @@ def url_parser(url):
         horse_name = str(name[1])
     except IndexError:
         horse_name = ""
-    horse_name = horse_name.replace(" ","").replace("　","").replace("<h1>","").replace("</h1>","")
+    horse_name = horse_name.replace(" ","").replace("　","").replace("<h1>","").replace("</h1>","").replace("□地","").replace("○地","").replace("□外","").replace("○外","")
     return horse_name,soup
 
-def get_race_list(horse_list,race_url):
+def get_race_list(horse_blood_list,horse_result_list,race_url):
     html = urllib.request.urlopen(race_url)
     soup = BeautifulSoup(html, 'html.parser')
     table = soup.find("a")
@@ -170,25 +180,90 @@ def get_race_list(horse_list,race_url):
             for tab3 in tab2:
                 try:
                     individual_url = tab3.get('href')
-                    individual_url_header = individual_url[:30] + "ped/"
-                    individual_url_footter = individual_url[30:]
-                    horse_list.append(individual_url_header + individual_url_footter)
+                    individual_blood_url_header = individual_url[:30] + "ped/"
+                    individual_blood_url_footter = individual_url[30:]
+                    horse_result_list.append(individual_url)
+                    horse_blood_list.append(individual_blood_url_header + individual_blood_url_footter)
                 except AttributeError:
                     continue
         break
 
-def add_racelist_to_horselist(horse_list,year):
+def add_racelist_to_horselist(horse_list,result_list,year):
     race_base_url = "https://race.netkeiba.com/race/shutuba.html?race_id="
-    for circuit in range(1,11):
+    for circuit in range(1,2):
         for number_iteration in range(1,6):
             for days in range(1,13):
                 for races in range(10,13):
                     race_url = race_base_url + str(f'{year:0}') + str(f'{circuit:02}') + str(f'{number_iteration:02}') + str(f'{days:02}') + str(f'{races:02}')
                     # print(race_url)
-                    get_race_list(horse_list,race_url)
+                    get_race_list(horse_list,result_list,race_url)
                     # print(horse_list)
                     if(horse_list == []):
                         continue
+
+def horse_one_step_result(url):
+    horse_name,soup = url_parser(url)
+    table = soup.find_all("table")
+    race_data_folder = "horse_race_data/"
+    property_folder = "horse_property_data/"
+    
+    os.makedirs(race_data_folder, exist_ok=True)
+    os.makedirs(property_folder, exist_ok=True)
+    race_data_csvname = race_data_folder + horse_name + ".csv"
+    property_data_csvname = property_folder + horse_name + ".csv"
+    if(os.path.exists(race_data_csvname)):
+        print("this file is exist")
+        return
+    get_race_data(table,race_data_csvname)
+    get_property_data(table,property_data_csvname)
+    time.sleep(0.1)
+
+def get_race_data(table,race_data_csvname):
+    for tab in table:
+        table_className = tab.get("class")
+        if table_className[0] == "db_h_race_results":
+            with open(race_data_csvname, "w", encoding='utf-8',newline="") as file:
+                writer = csv.writer(file)
+                rows = tab.find_all("tr")
+                for row in rows:   
+                    csvRow = []
+                    for cell in row.findAll(['td', 'th']):
+                        try:
+                            add_text = cell.get_text()
+                            add_text = add_text.replace('\n','')
+                            csvRow.append(add_text)
+                        except IndexError:
+                            continue
+                    # integration = ','.join(csvRow)
+                    # degration = integration.split(',')
+                    # writer.writerow(degration)
+                    writer.writerow(csvRow)
+            break
+
+def get_property_data(table,property_data_csvname):
+    horse_result = ""
+    flag = 0
+    for tab in table:
+        table_className = tab.get("class")
+        if table_className[0] == "db_prof_table":
+            with open(property_data_csvname, "w", encoding='utf-8',newline="") as file:
+                writer = csv.writer(file)
+                rows = tab.find_all("tr")
+                for row in rows:   
+                    csvRow = []
+                    for cell in row.findAll(['td', 'th']):
+                        try:
+                            add_text = cell.get_text()
+                            add_text = add_text.replace('\n','')
+                            csvRow.append(add_text)
+                        except IndexError:
+                            continue
+                    # integration = ','.join(csvRow)
+                    # degration = integration.split(',')
+                    # writer.writerow(degration)
+                    writer.writerow(csvRow)
+            break
+    
 
 if __name__ == "__main__":
     main()
