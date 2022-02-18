@@ -14,19 +14,20 @@ def main():
     horse_blood_list_csv = "horse_blood_list.csv"
     horse_result_list = []
     horse_result_list_csv = "horse_result_list.csv"
-
+    race_url = "https://race.netkeiba.com/race/shutuba.html?race_id=202205010711"
     # add_racelist_to_horselist(horse_blood_list,horse_result_list,year)
+    get_race_list(horse_blood_list,horse_result_list,race_url)
     # print(horse_blood_list)
-    # np.savetxt(horse_blood_list_csv, horse_blood_list, delimiter =",",fmt ='% s')
-    # np.savetxt(horse_result_list_csv, horse_result_list, delimiter =",",fmt ='% s')
+    np.savetxt(horse_blood_list_csv, horse_blood_list, delimiter =",",fmt ='% s')
+    np.savetxt(horse_result_list_csv, horse_result_list, delimiter =",",fmt ='% s')
     
     horse_blood_list = []
     horse_blood_list = np.loadtxt(horse_blood_list_csv, delimiter =",", dtype='str')
     horse_result_list = []
     horse_result_list = np.loadtxt(horse_result_list_csv, delimiter =",", dtype='str')
 
-    # for individual_horse_url in horse_blood_list:
-        # horse_one_step_blood(individual_horse_url)
+    for individual_horse_url in horse_blood_list:
+        horse_one_step_blood(individual_horse_url)
     for individual_horse_url in horse_result_list:
         horse_one_step_result(individual_horse_url)
 
@@ -40,10 +41,12 @@ def horse_one_step_blood(url):
     os.makedirs(blood_data_folder, exist_ok=True)
     os.makedirs(blood_value_folder, exist_ok=True)
     csvname = blood_data_folder + horse_name + ".csv"
+    csvname_md = blood_data_folder + horse_name + ".md"
     if(os.path.exists(csvname)):
         print("this file is exist")
         return
     blood_value_csvname = blood_value_folder + horse_name + ".csv"
+    blood_value_csvname_md = blood_value_folder + horse_name + ".md"
     oldhorse_url_list = [] 
     position_x = 0
     position_y = 0
@@ -61,6 +64,7 @@ def horse_one_step_blood(url):
     pd.DataFrame(horse_line).to_csv(csvname,header=False, index=False)
     df = pd.json_normalize(blood_percentage)
     df.to_csv(blood_value_csvname, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)
+    df.to_csv(blood_value_csvname_md, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)
 
 def initial_horse_line(individual_url,horse_line,position_x,position_y,oldhorse_url_list,blood_percentage):
     horse_name,soup = url_parser(individual_url)
@@ -191,6 +195,7 @@ def get_race_list(horse_blood_list,horse_result_list,race_url):
 def add_racelist_to_horselist(horse_list,result_list,year):
     race_base_url = "https://race.netkeiba.com/race/shutuba.html?race_id="
     for circuit in range(1,2):
+        # 1:札幌 2:函館 3:福島 4:新潟 5:東京 6:中山 7:中京 8:京都 9:阪神 10:小倉
         for number_iteration in range(1,6):
             for days in range(1,13):
                 for races in range(10,13):
