@@ -14,7 +14,7 @@ def main():
     horse_blood_list_csv = "horse_blood_list.csv"
     horse_result_list = []
     horse_result_list_csv = "horse_result_list.csv"
-    race_url = "https://race.netkeiba.com/race/shutuba.html?race_id=202205010711"
+    race_url = "https://race.netkeiba.com/race/shutuba.html?race_id=202205010811"
     # add_racelist_to_horselist(horse_blood_list,horse_result_list,year)
     get_race_list(horse_blood_list,horse_result_list,race_url)
     # print(horse_blood_list)
